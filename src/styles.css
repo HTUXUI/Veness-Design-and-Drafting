@@ -1,3 +1,6 @@
+/* Hanken Grotesk (SIL Open Font License), self-hosted, Latin subset */
+@font-face { font-family: 'Hanken Grotesk'; font-style: normal; font-weight: 300 600; font-display: swap; src: url('/assets/fonts/hanken-grotesk-var.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
 /* Veness Design & Drafting — Black Editorial
    Tokens follow the build brief (section 02). */
 :root {
@@ -166,7 +169,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 /* ---------- Service rows ---------- */
 .rows { border-top: 1px solid var(--rule); }
 .row { display: grid; grid-template-columns: 1fr auto; column-gap: 1.5rem; row-gap: .5rem; align-items: center; padding-block: clamp(1.4rem, 1rem + 1.4vw, 2.25rem); border-bottom: 1px solid var(--rule); text-decoration: none; position: relative; transition: padding .25s var(--ease), background-color .25s var(--ease); }
-.row h3 { font-size: var(--fs-h2); font-weight: 300; letter-spacing: -0.02em; line-height: 1.15; }
+.row h2, .row h3 { font-size: var(--fs-h2); font-weight: 300; letter-spacing: -0.02em; line-height: 1.15; }
 .row p { grid-column: 1; margin: 0; color: var(--text-2); max-width: 55ch; }
 .row .go { grid-column: 2; grid-row: 1 / span 2; display: inline-flex; align-items: center; gap: .7rem; font-weight: 500; font-size: var(--fs-ui); }
 .row .go span.t { display: none; }
@@ -316,7 +319,10 @@ input, select, textarea, button, a, summary, .summary, .status-box { scroll-marg
 .carousel { overflow-x: auto; scrollbar-width: thin; cursor: grab; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
 .carousel:focus-visible { outline-offset: -3px; }
 .car-track { display: flex; align-items: flex-start; gap: var(--gutter); padding-inline: var(--margin); width: max-content; }
-.car-item { flex: none; width: min(70vw, 320px); }
+.car-item { flex: none; width: min(40vw, 300px); }
+/* Before the script runs, show the featured project first at the same size the script will give it, so the largest image paints early and doesn't change size afterwards */
+.car-item.feature { order: -1; width: min(82vw, 860px); }
+@media (min-width: 900px) { .car-item.feature { width: min(56vw, 860px); } }
 .car-item .frame { aspect-ratio: 4 / 5; }
 .car-item.feature .frame { aspect-ratio: 3 / 2; }
 .car-item .frame img { width: 100%; height: 100%; object-fit: cover; -webkit-user-drag: none; }
@@ -395,3 +401,7 @@ input, select, textarea, button, a, summary, .summary, .status-box { scroll-marg
 .js-testi .testi-item.on { opacity: 1; visibility: visible; transition: opacity .45s var(--ease); }
 .js-testi .testi-tab { display: grid; }
 @media (prefers-reduced-motion: reduce) { .js-testi .testi-item, .js-testi .testi-item.on { transition: none; } .js-testi .testi-tab[aria-selected="true"] .bar { animation: none; } }
+
+/* Reserve the carousel's height before the script runs, so nothing shifts when it starts */
+.carousel { min-height: calc(min(82vw, 860px) * 0.667 + 130px); }
+@media (min-width: 900px) { .carousel { min-height: calc(min(56vw, 860px) * 0.667 + 130px); } }

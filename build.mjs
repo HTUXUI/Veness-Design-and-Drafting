@@ -21,12 +21,29 @@ const services = [
   { path: '/services/drafting-documentation/', name: 'Drafting & documentation', img: 'contemporary-family-homes', short: 'Clear, accurate drawings and documentation for approvals and construction.' },
 ];
 
+const business = {
+  '@type': ['ProfessionalService', 'LocalBusiness'], '@id': `${SITE}/#business`, name: 'Veness Design & Drafting', url: SITE + '/',
+  description: 'Residential building designer for new homes, renovations, extensions and interiors in Bowral and the Southern Highlands, NSW.',
+  telephone: '+61403082845', email: EMAIL, logo: `${SITE}/assets/logo-reversed.png`, image: `${SITE}/assets/img/country-homes-01-1536.webp`,
+  founder: { '@type': 'Person', name: 'Chris Veness', jobTitle: 'Building designer' },
+  areaServed: [{ '@type': 'City', name: 'Bowral' }, { '@type': 'AdministrativeArea', name: 'Southern Highlands, NSW' }],
+  knowsAbout: ['Residential building design', 'New home design', 'Home renovations and extensions', 'Interior design', 'Drafting and documentation'],
+};
+const website = { '@type': 'WebSite', '@id': `${SITE}/#website`, url: SITE + '/', name: 'Veness Design & Drafting', inLanguage: 'en-AU', publisher: { '@id': `${SITE}/#business` } };
 const ARR = '<i class="arr" aria-hidden="true">↗</i>';
+const cut = (str, max = 155) => { if (str.length <= max) return str; const t = str.slice(0, max - 1); const i = Math.max(t.lastIndexOf('. '), t.lastIndexOf(', '), t.lastIndexOf(' ')); return t.slice(0, i).replace(/[,;:\s]+$/, '') + '.'; };
+let lastCrumbs = null;
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
 
 const nav = [['/projects/', 'Projects'], ['/services/', 'Services'], ['/our-process/', 'Our process'], ['/meet-chris/', 'Meet Chris']];
 
-function layout({ path, title, desc, body, robots, bodyClass = '', ogImage }) {
+function layout({ path, title, desc, body, robots, bodyClass = '', ogImage, preload, ld = [] }) {
+  const crumbs = lastCrumbs; lastCrumbs = null;
+  const og = ogImage || P['country-homes'].cover;
+  const ogUrl = `${SITE}/assets/img/${og.id}-${og.widths.at(-1)}.webp`;
+  const pre = preload ? `<link rel="preload" as="image" fetchpriority="high" href="/assets/img/${preload.id}-${preload.widths.at(-1)}.webp" imagesrcset="${preload.widths.map((w) => `/assets/img/${preload.id}-${w}.webp ${w}w`).join(', ')}" imagesizes="(min-width: 900px) 56vw, 82vw">` : '';
+  const graph = [...(path === '/' ? [business, website] : []), ...(crumbs && crumbs.length > 1 ? [{ '@type': 'BreadcrumbList', itemListElement: crumbs.map(([h, t], i) => ({ '@type': 'ListItem', position: i + 1, name: t, item: SITE + h })) }] : []), ...ld];
+  const jsonld = graph.length ? `<script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', '@graph': graph })}</script>` : '';
   const cur = (p) => (path.startsWith(p) ? ' aria-current="page"' : '');
   return `<!doctype html>
 <html lang="en-AU">
@@ -35,20 +52,24 @@ function layout({ path, title, desc, body, robots, bodyClass = '', ogImage }) {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(title)}</title>
 <meta name="description" content="${desc}">
-<meta name="theme-color" content="#080808">
-${robots ? `<meta name="robots" content="${robots}">` : ''}
+<meta name="theme-color" content="#080808"><meta name="color-scheme" content="dark">
+<meta name="robots" content="${robots || 'index,follow,max-image-preview:large'}">
 <link rel="canonical" href="${SITE}${path}">
-<meta property="og:type" content="website"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${desc}"><meta property="og:image" content="${SITE}/assets/img/${(ogImage || P['country-homes'].cover).id}-1536.webp">
-<link rel="icon" href="/assets/favicon.png" type="image/png">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600&display=swap">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Veness Design &amp; Drafting"><meta property="og:locale" content="en_AU">
+<meta property="og:url" content="${SITE}${path}"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${desc}">
+<meta property="og:image" content="${ogUrl}"><meta property="og:image:width" content="${og.widths.at(-1)}"><meta property="og:image:height" content="${Math.round(og.widths.at(-1) * og.h / og.w)}"><meta property="og:image:alt" content="${og.alt}">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${esc(title)}"><meta name="twitter:description" content="${desc}"><meta name="twitter:image" content="${ogUrl}"><meta name="twitter:image:alt" content="${og.alt}">
+${pre}
+<link rel="icon" href="/assets/favicon.png" type="image/png"><link rel="apple-touch-icon" href="/assets/favicon.png">
+<link rel="preload" href="/assets/fonts/hanken-grotesk-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/styles.css">
+${jsonld}
 </head>
 <body class="${bodyClass}">
 <a class="skip" href="#main">Skip to main content</a>
 <header class="site-header">
   <div class="wrap">
-    <a class="logo" href="/" aria-label="Veness Design &amp; Drafting, home"><img class="mark" src="/assets/logo-mark.png" width="400" height="455" alt=""><span class="lt"><b>VENESS</b><span>DESIGN &amp; DRAFTING</span></span></a>
+    <a class="logo" href="/" aria-label="Veness Design &amp; Drafting, home"><img class="mark" src="/assets/logo-mark.png" width="400" height="455" alt=""><span class="lt"><b>VENESS</b> <span>DESIGN &amp; DRAFTING</span></span></a>
     <nav class="nav" aria-label="Main">
       ${nav.map(([h, t]) => `<a href="${h}"${cur(h)}>${t}</a>`).join('\n      ')}
       <a class="btn" href="/contact/">Discuss your project</a>
@@ -58,7 +79,7 @@ ${robots ? `<meta name="robots" content="${robots}">` : ''}
 </header>
 <div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Site menu">
   <div class="wrap">
-    <div class="drawer-head"><a class="logo" href="/" aria-label="Veness Design &amp; Drafting, home"><img class="mark" src="/assets/logo-mark.png" width="400" height="455" alt=""><span class="lt"><b>VENESS</b><span>DESIGN &amp; DRAFTING</span></span></a><button class="menu-btn" type="button" data-close><span>Close</span><span aria-hidden="true" style="font-size:1.6rem;line-height:1">×</span></button></div>
+    <div class="drawer-head"><a class="logo" href="/" aria-label="Veness Design &amp; Drafting, home"><img class="mark" src="/assets/logo-mark.png" width="400" height="455" alt=""><span class="lt"><b>VENESS</b> <span>DESIGN &amp; DRAFTING</span></span></a><button class="menu-btn" type="button" data-close><span>Close</span><span aria-hidden="true" style="font-size:1.6rem;line-height:1">×</span></button></div>
     <nav aria-label="Menu"><ul>
       ${[...nav, ['/contact/', 'Contact']].map(([h, t]) => `<li><a href="${h}">${t}</a></li>`).join('\n      ')}
     </ul></nav>
@@ -71,7 +92,7 @@ ${body}
 <footer class="site-footer">
   <div class="wrap">
     <div class="foot-grid">
-      <div><a class="logo" href="/" aria-label="Veness Design &amp; Drafting, home"><img class="mark" src="/assets/logo-mark.png" width="400" height="455" alt=""><span class="lt"><b>VENESS</b><span>DESIGN &amp; DRAFTING</span></span></a>
+      <div><a class="logo" href="/" aria-label="Veness Design &amp; Drafting, home"><img class="mark" src="/assets/logo-mark.png" width="400" height="455" alt=""><span class="lt"><b>VENESS</b> <span>DESIGN &amp; DRAFTING</span></span></a>
         <p class="small" style="margin-top:1.25rem">Residential building designer serving Bowral and the Southern Highlands, NSW.</p></div>
       <nav aria-label="Footer, pages"><h2>Explore</h2><ul>
         <li><a href="/projects/">Projects</a></li><li><a href="/services/">Services</a></li><li><a href="/our-process/">Our process</a></li><li><a href="/meet-chris/">Meet Chris</a></li><li><a href="/client-stories/">Client stories</a></li></ul></nav>
@@ -96,8 +117,8 @@ const pcard = (p, cls = '', dim = false, eager = false, sizes = '(min-width: 900
   ${dim ? `<div class="dim" aria-hidden="true"><i></i><span>${p.status.toUpperCase()}</span><i></i></div>` : ''}
 </a>`;
 
-const serviceRows = () => `<div class="rows">${services.map((s) => `
-  <a class="row" href="${s.path}"><h3>${s.name}</h3><p>${s.short}</p><span class="thumb" aria-hidden="true">${imgTag(P[s.img].cover, '160px', { alt: '' })}</span><span class="go"><span class="t">Explore service</span>${ARR}</span></a>`).join('')}
+const serviceRows = (lv = 3) => `<div class="rows">${services.map((s) => `
+  <a class="row" href="${s.path}"><h${lv}>${s.name}</h${lv}><p>${s.short}</p><span class="thumb" aria-hidden="true">${imgTag(P[s.img].cover, '160px', { alt: '' })}</span><span class="go"><span class="t">Explore service</span>${ARR}</span></a>`).join('')}
 </div>`;
 
 const steps = [
@@ -148,11 +169,11 @@ const enquirySection = (cls = 'rule-top') => `
 const ctaBand = (h = 'Have a project in mind?') => `
 <section class="section cta-band" aria-labelledby="cta-h"><div class="wrap inner"><h2 id="cta-h">${h}</h2><div class="actions"><a class="btn" href="/contact/">Discuss your project ${ARR}</a><a class="tlink" href="tel:${TEL}">Call ${PHONE}</a></div></div></section>`;
 
-const head = (crumbs, h1, lede) => `
+const head = (crumbs, h1, lede) => (lastCrumbs = crumbs, `
 <div class="wrap page-head">
   ${crumbs ? `<nav class="crumbs" aria-label="Breadcrumb"><ol>${crumbs.map(([h, t], i) => (i === crumbs.length - 1 ? `<li aria-current="page">${t}</li>` : `<li><a href="${h}">${t}</a></li>`)).join('')}</ol></nav>` : ''}
   <h1>${h1}</h1>${lede ? `<p class="lede">${lede}</p>` : ''}
-</div>`;
+</div>`);
 
 const pages = {};
 
@@ -160,6 +181,7 @@ const pages = {};
 pages['/'] = layout({
   path: '/', title: 'Building Designer Bowral & Southern Highlands | Veness',
   desc: 'Residential building design in Bowral and the Southern Highlands. Explore new homes, renovations and extensions with Chris Veness. Discuss your project.',
+  preload: P['country-homes'].cover,
   body: `
 <section class="hero" aria-labelledby="h1"><div class="wrap">
   <p class="eyebrow"><span>Residential building designer <span aria-hidden="true">|</span> Bowral &amp; Southern Highlands</span></p>
@@ -241,7 +263,8 @@ for (const p of projects) {
   const others = projects.filter((x) => x !== p && x.type === p.type).slice(0, 3);
   pages[`/projects/${p.slug}/`] = layout({
     path: `/projects/${p.slug}/`, title: `${p.name} | ${p.type} | Veness`,
-    desc: `${p.name}: ${p.blurb} ${p.status}.`.slice(0, 160), ogImage: p.cover,
+    desc: cut(`${p.name}, ${p.type.toLowerCase()} by Chris Veness. ${p.blurb}`), ogImage: p.cover, preload: p.cover,
+    ld: [{ '@type': 'CollectionPage', name: p.name, url: `${SITE}/projects/${p.slug}/`, description: p.blurb, isPartOf: { '@id': `${SITE}/#website` }, about: { '@id': `${SITE}/#business` }, primaryImageOfPage: { '@type': 'ImageObject', contentUrl: `${SITE}/assets/img/${p.cover.id}-${p.cover.widths.at(-1)}.webp`, description: p.cover.alt } }],
     body: `${head([['/', 'Home'], ['/projects/', 'Projects'], [`/projects/${p.slug}/`, p.name]], p.name)}
 <div class="wrap"><p style="margin-top:-1.5rem;color:var(--text-2)">${p.type}<span class="status">${p.status}</span></p>
   <div class="hero-img" style="margin-top:2rem">${imgTag(p.cover, '(min-width: 1440px) 1320px, 100vw', { eager: true })}</div>
@@ -268,7 +291,7 @@ pages['/services/'] = layout({
   path: '/services/', title: 'Services | Building Designer Bowral | Veness',
   desc: 'New home design, renovations and extensions, interior design and drafting for homeowners in Bowral and the Southern Highlands.',
   body: `${head([['/', 'Home'], ['/services/', 'Services']], 'How I can help.', 'Four ways to work together, depending on where your project is up to. Not sure which fits? Start with a conversation.')}
-<section class="wrap" style="padding-bottom:var(--section)">${serviceRows()}</section>${ctaBand('Not sure where to start?')}`,
+<section class="wrap" style="padding-bottom:var(--section)">${serviceRows(2)}</section>${ctaBand('Not sure where to start?')}`,
 });
 
 const svcPages = {
@@ -318,7 +341,8 @@ for (const [slug, s] of Object.entries(svcPages)) {
   const path = `/services/${slug}/`;
   const name = services.find((x) => x.path === path).name;
   pages[path] = layout({
-    path, title: s.title, desc: s.desc,
+    path, title: s.title, desc: cut(s.desc),
+    ld: [{ '@type': 'Service', name, serviceType: name, url: SITE + path, description: s.lede, provider: { '@id': `${SITE}/#business` }, areaServed: [{ '@type': 'City', name: 'Bowral' }, { '@type': 'AdministrativeArea', name: 'Southern Highlands, NSW' }] }],
     body: `${head([['/', 'Home'], ['/services/', 'Services'], [path, name]], s.h1, s.lede)}
 <section class="section--tight"><div class="wrap prose">
   ${heroOf[slug] ? `<div class="hero-img" style="margin-bottom:3.5rem">${imgTag(P[heroOf[slug][0]].images[heroOf[slug][1]], '(min-width: 1440px) 1320px, 100vw', { eager: true })}</div>` : ''}
@@ -352,7 +376,8 @@ pages['/our-process/'] = layout({
 /* ---------- Meet Chris ---------- */
 pages['/meet-chris/'] = layout({
   path: '/meet-chris/', title: 'Meet Chris Veness, Building Designer | Veness',
-  desc: 'Meet Chris Veness, founder of Veness Design & Drafting. A personal, honest approach to new homes, renovations and extensions in Bowral and the Southern Highlands.',
+  desc: 'Meet Chris Veness, founder of Veness Design & Drafting: a personal, honest approach to new homes, renovations and extensions in the Southern Highlands.',
+  ld: [{ '@type': 'Person', name: 'Chris Veness', jobTitle: 'Building designer', url: `${SITE}/meet-chris/`, worksFor: { '@id': `${SITE}/#business` } }],
   body: `${head([['/', 'Home'], ['/meet-chris/', 'Meet Chris']], 'A personal approach to your home.')}
 <section class="section--tight"><div class="wrap split">
   <div class="col-b prose"><p class="lede" style="color:var(--text)">${bio.lede}</p>
@@ -414,6 +439,6 @@ cpSync('src/assets', 'dist/assets', { recursive: true });
 cpSync('src/styles.css', 'dist/styles.css');
 cpSync('src/main.js', 'dist/main.js');
 const urls = Object.keys(pages).filter((p) => !p.endsWith('.html'));
-writeFileSync('dist/sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => `<url><loc>${SITE}${u}</loc></url>`).join('\n')}\n</urlset>\n`);
+writeFileSync('dist/sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => `<url><loc>${SITE}${u}</loc><lastmod>${new Date().toISOString().slice(0, 10)}</lastmod></url>`).join('\n')}\n</urlset>\n`);
 writeFileSync('dist/robots.txt', `User-agent: *\nAllow: /\nSitemap: ${SITE}/sitemap.xml\n`);
 console.log('Built', Object.keys(pages).length, 'pages');

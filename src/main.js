@@ -34,8 +34,9 @@
     const half = Math.floor(N / 2);
     car.classList.add('car-live');
 
+    let cachedW = car.clientWidth; // read once (and on resize) so animation frames never force a layout
     const dims = () => {
-      const cw = car.clientWidth;
+      const cw = cachedW;
       const small = Math.min(cw * 0.4, 300);
       const large = mq.matches ? Math.min(cw * 0.56, 860) : Math.min(cw * 0.82, 860);
       return { cw, small, large, gap: GAP() };
@@ -135,7 +136,7 @@
     car.addEventListener('dragstart', (e) => e.preventDefault());
 
     new IntersectionObserver((es) => { visible = es[0].isIntersecting; }).observe(car);
-    addEventListener('resize', layout);
+    addEventListener('resize', () => { cachedW = car.clientWidth; layout(); });
     layout(); requestAnimationFrame(tick);
   }
 
