@@ -13,3 +13,7 @@ npm run build    # builds to dist/
 - Styles and behaviour: `src/styles.css`, `src/main.js`
 
 Placeholders still to replace before launch are marked on the pages (project briefs, privacy wording). The enquiry form needs a server endpoint (`data-endpoint` or `window.VENESS_ENQUIRY_ENDPOINT`).
+
+## Enquiry form
+
+`api/enquiry.mjs` validates the form on the server and emails it to `chris@venessdesign.com.au` via Resend, with the visitor's address as Reply-To. Set `RESEND_API_KEY` and `ENQUIRY_FROM` (a sender on a domain verified in Resend) as environment variables on the host; see `.env.example`. Without them the endpoint returns 503 and the form shows its failure message. Deploys as-is on Vercel (static `dist/` plus the `api/` function).
