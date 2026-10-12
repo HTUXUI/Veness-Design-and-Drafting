@@ -5,7 +5,7 @@ import { join, dirname } from 'node:path';
 import { stories, bio } from './src/data/content.mjs';
 
 const SITE = 'https://www.venessdesign.com.au'; // confirm preferred hostname before launch
-const PHONE = '0403 082 845', TEL = '+61403082845', EMAIL = 'info@venessdesign.com.au';
+const PHONE = '0403 082 845', TEL = '+61403082845', EMAIL = 'chris@venessdesign.com.au';
 
 // Projects are image collections prepared by scripts/prepare-images.py (src/data/collections.json)
 const collections = JSON.parse(readFileSync('src/data/collections.json', 'utf8'));
