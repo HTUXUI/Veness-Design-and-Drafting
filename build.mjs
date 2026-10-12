@@ -113,8 +113,8 @@ const pcard = (p, cls = '', dim = false, eager = false, sizes = '(min-width: 900
 <a class="pcard reveal ${cls}" href="/projects/${p.slug}/">
   <div class="frame">${imgTag(p.cover, sizes, { eager })}</div>
   <h3>${p.name}</h3>
-  <p class="meta">${p.type}${quiet && p.status === 'Concept render' ? '' : `<span class="status">${p.status}</span>`}</p>
-  ${dim && !(quiet && p.status === 'Concept render') ? `<div class="dim" aria-hidden="true"><i></i><span>${p.status.toUpperCase()}</span><i></i></div>` : ''}
+  <p class="meta">${p.type}${quiet ? '' : `<span class="status">${p.status}</span>`}</p>
+  ${dim && !quiet ? `<div class="dim" aria-hidden="true"><i></i><span>${p.status.toUpperCase()}</span><i></i></div>` : ''}
 </a>`;
 
 const serviceRows = (lv = 3) => `<div class="rows">${services.map((s) => `
