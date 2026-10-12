@@ -9,7 +9,17 @@
       "permanent": true
     },
     {
+      "source": "/portfolio/",
+      "destination": "/projects/",
+      "permanent": true
+    },
+    {
       "source": "/about-5",
+      "destination": "/client-stories/",
+      "permanent": true
+    },
+    {
+      "source": "/about-5/",
       "destination": "/client-stories/",
       "permanent": true
     }

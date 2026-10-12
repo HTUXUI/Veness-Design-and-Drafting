@@ -131,7 +131,7 @@ const stepsHtml = () => `<ol class="steps">${steps.map(([h, p]) => `<li class="s
 
 let fid = 0;
 const form = () => { const id = 'f' + ++fid; return `
-<form class="form" id="${id}" data-enquiry data-endpoint="/api/enquiry" novalidate aria-labelledby="${id}-t">
+<form class="form" id="${id}" data-enquiry data-endpoint="/api/enquiry/" novalidate aria-labelledby="${id}-t">
   <h3 id="${id}-t" style="font-size:1.375rem">Send a project enquiry</h3>
   <div class="summary" role="alert"></div>
   <div class="row2">
