@@ -1,0 +1,1194 @@
+[
+ {
+  "slug": "country-homes",
+  "name": "Country homes",
+  "type": "New home design",
+  "status": "Concept render",
+  "alt": "Concept render of a low country home with timber cladding and a metal roof, set in open grassland",
+  "blurb": "Low, timber-clad homes with metal roofs, set into open paddocks and bushland. Deep verandahs, gravel drives and generous glazing connect each home to its landscape.",
+  "images": [
+   {
+    "id": "country-homes-01",
+    "w": 1536,
+    "h": 1024,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Concept render of a low country home with timber cladding and a metal roof, set in open grassland",
+    "source": "Chris Veness - Rendered design 048.png"
+   },
+   {
+    "id": "country-homes-02",
+    "w": 1536,
+    "h": 1024,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Country homes: concept view 2",
+    "source": "111F0AEC-B009-4990-AF78-8B72838039BC.PNG"
+   },
+   {
+    "id": "country-homes-03",
+    "w": 1513,
+    "h": 1040,
+    "widths": [
+     480,
+     960,
+     1513
+    ],
+    "alt": "Country homes: concept view 3",
+    "source": "1DB3ABC1-1E0C-42F6-8672-385444C5B2E6.PNG"
+   },
+   {
+    "id": "country-homes-04",
+    "w": 1536,
+    "h": 1024,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Country homes: concept view 4",
+    "source": "12C4AFC5-6D83-4E6F-A353-7B13C2B9B387.PNG"
+   },
+   {
+    "id": "country-homes-05",
+    "w": 1536,
+    "h": 1024,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Country homes: concept view 5",
+    "source": "C785CA64-72E2-4997-8B72-DFEA69EC47B8.PNG"
+   },
+   {
+    "id": "country-homes-06",
+    "w": 1536,
+    "h": 1024,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Country homes: concept view 6",
+    "source": "A67B860A-7564-4B19-8CF1-58AA7302C2D7.PNG"
+   },
+   {
+    "id": "country-homes-07",
+    "w": 1536,
+    "h": 1024,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Country homes: concept view 7",
+    "source": "B001F828-4C9F-4EB5-884B-9830F2D07CCC.PNG"
+   },
+   {
+    "id": "country-homes-08",
+    "w": 1536,
+    "h": 1024,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Country homes: concept view 8",
+    "source": "BE993381-D494-4326-B6BC-9EDC32831538.PNG"
+   },
+   {
+    "id": "country-homes-09",
+    "w": 1536,
+    "h": 1024,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Country homes: concept view 9",
+    "source": "91BE38C2-8B69-41B3-992B-D586706E9F7F.PNG"
+   },
+   {
+    "id": "country-homes-10",
+    "w": 1536,
+    "h": 1024,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Country homes: concept view 10",
+    "source": "24769173-38DA-48ED-B3F0-985BA231C1C0.PNG"
+   },
+   {
+    "id": "country-homes-11",
+    "w": 1536,
+    "h": 1024,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Country homes: concept view 11",
+    "source": "CA2884E6-E92E-4FC1-BE94-0DC7FADDB28F.PNG"
+   },
+   {
+    "id": "country-homes-12",
+    "w": 1536,
+    "h": 1024,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Country homes: concept view 12",
+    "source": "Chris Veness - Rendered design 066.png"
+   },
+   {
+    "id": "country-homes-13",
+    "w": 1536,
+    "h": 1024,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Country homes: concept view 13",
+    "source": "1FC5E344-791E-4AFB-9646-C1C2B66765E2.PNG"
+   },
+   {
+    "id": "country-homes-14",
+    "w": 1536,
+    "h": 1024,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Country homes: concept view 14",
+    "source": "46C48E67-A665-4C9F-BF07-8566E52DB4A3.PNG"
+   },
+   {
+    "id": "country-homes-15",
+    "w": 1536,
+    "h": 1024,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Country homes: concept view 15",
+    "source": "Chris Veness - Rendered design 049.png"
+   },
+   {
+    "id": "country-homes-16",
+    "w": 1536,
+    "h": 1024,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Country homes: concept view 16",
+    "source": "Chris Veness - Rendered design 050.png"
+   }
+  ]
+ },
+ {
+  "slug": "hillside-residences",
+  "name": "Hillside residences",
+  "type": "New home design",
+  "status": "Concept render",
+  "alt": "Concept render of a two-storey home with gabled glazing on a hillside at sunset",
+  "blurb": "Larger two-storey concepts that use slope and view, with gabled glazing, layered rooflines and gravel approaches.",
+  "images": [
+   {
+    "id": "hillside-residences-01",
+    "w": 1536,
+    "h": 1024,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Concept render of a two-storey home with gabled glazing on a hillside at sunset",
+    "source": "Chris Veness - Rendered design 058.png"
+   },
+   {
+    "id": "hillside-residences-02",
+    "w": 1536,
+    "h": 1024,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Hillside residences: concept view 2",
+    "source": "Chris Veness - Rendered design 051.png"
+   },
+   {
+    "id": "hillside-residences-03",
+    "w": 1536,
+    "h": 1024,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Hillside residences: concept view 3",
+    "source": "Chris Veness - Rendered design 052.png"
+   },
+   {
+    "id": "hillside-residences-04",
+    "w": 1536,
+    "h": 1024,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Hillside residences: concept view 4",
+    "source": "Chris Veness - Rendered design 053.png"
+   },
+   {
+    "id": "hillside-residences-05",
+    "w": 1536,
+    "h": 1024,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Hillside residences: concept view 5",
+    "source": "Chris Veness - Rendered design 054.png"
+   },
+   {
+    "id": "hillside-residences-06",
+    "w": 1536,
+    "h": 1024,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Hillside residences: concept view 6",
+    "source": "Chris Veness - Rendered design 055.png"
+   },
+   {
+    "id": "hillside-residences-07",
+    "w": 1536,
+    "h": 1024,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Hillside residences: concept view 7",
+    "source": "Chris Veness - Rendered design 056.png"
+   },
+   {
+    "id": "hillside-residences-08",
+    "w": 1536,
+    "h": 1024,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Hillside residences: concept view 8",
+    "source": "Chris Veness - Rendered design 057.png"
+   },
+   {
+    "id": "hillside-residences-09",
+    "w": 1536,
+    "h": 1024,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Hillside residences: concept view 9",
+    "source": "Chris Veness - Rendered design 059.png"
+   },
+   {
+    "id": "hillside-residences-10",
+    "w": 1536,
+    "h": 1024,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Hillside residences: concept view 10",
+    "source": "Chris Veness - Rendered design 064.png"
+   }
+  ]
+ },
+ {
+  "slug": "modern-farmhouse",
+  "name": "Modern farmhouse homes",
+  "type": "New home design",
+  "status": "Concept render",
+  "alt": "Concept render of a white board-and-batten farmhouse-style home with a front verandah and dormer windows",
+  "blurb": "White board-and-batten homes with dark roofs, front porches and timber garage doors, designed for suburban and village blocks.",
+  "images": [
+   {
+    "id": "modern-farmhouse-01",
+    "w": 1536,
+    "h": 1024,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Concept render of a white board-and-batten farmhouse-style home with a front verandah and dormer windows",
+    "source": "Chris Veness - Rendered design 018.png"
+   },
+   {
+    "id": "modern-farmhouse-02",
+    "w": 1774,
+    "h": 887,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Modern farmhouse homes: concept view 2",
+    "source": "Chris Veness - Rendered design 002.png"
+   },
+   {
+    "id": "modern-farmhouse-03",
+    "w": 1844,
+    "h": 853,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Modern farmhouse homes: concept view 3",
+    "source": "Chris Veness - Rendered design 003.png"
+   },
+   {
+    "id": "modern-farmhouse-04",
+    "w": 1684,
+    "h": 934,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Modern farmhouse homes: concept view 4",
+    "source": "Chris Veness - Rendered design 004.png"
+   },
+   {
+    "id": "modern-farmhouse-05",
+    "w": 1774,
+    "h": 887,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Modern farmhouse homes: concept view 5",
+    "source": "Chris Veness - Rendered design 005.png"
+   },
+   {
+    "id": "modern-farmhouse-06",
+    "w": 1514,
+    "h": 1039,
+    "widths": [
+     480,
+     960,
+     1514
+    ],
+    "alt": "Modern farmhouse homes: concept view 6",
+    "source": "Chris Veness - Rendered design 007.png"
+   },
+   {
+    "id": "modern-farmhouse-07",
+    "w": 1584,
+    "h": 993,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Modern farmhouse homes: concept view 7",
+    "source": "Chris Veness - Rendered design 009.png"
+   },
+   {
+    "id": "modern-farmhouse-08",
+    "w": 1537,
+    "h": 1023,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Modern farmhouse homes: concept view 8",
+    "source": "Chris Veness - Rendered design 010.png"
+   },
+   {
+    "id": "modern-farmhouse-09",
+    "w": 1537,
+    "h": 1023,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Modern farmhouse homes: concept view 9",
+    "source": "Chris Veness - Rendered design 011.png"
+   },
+   {
+    "id": "modern-farmhouse-10",
+    "w": 1537,
+    "h": 1023,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Modern farmhouse homes: concept view 10",
+    "source": "Chris Veness - Rendered design 012.png"
+   },
+   {
+    "id": "modern-farmhouse-11",
+    "w": 1536,
+    "h": 1024,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Modern farmhouse homes: concept view 11",
+    "source": "Chris Veness - Rendered design 013.png"
+   },
+   {
+    "id": "modern-farmhouse-12",
+    "w": 1854,
+    "h": 848,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Modern farmhouse homes: concept view 12",
+    "source": "Chris Veness - Rendered design 014.png"
+   },
+   {
+    "id": "modern-farmhouse-13",
+    "w": 1854,
+    "h": 848,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Modern farmhouse homes: concept view 13",
+    "source": "Chris Veness - Rendered design 015.png"
+   },
+   {
+    "id": "modern-farmhouse-14",
+    "w": 1703,
+    "h": 923,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Modern farmhouse homes: concept view 14",
+    "source": "Chris Veness - Rendered design 016.png"
+   },
+   {
+    "id": "modern-farmhouse-15",
+    "w": 1730,
+    "h": 909,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Modern farmhouse homes: concept view 15",
+    "source": "Chris Veness - Rendered design 017.png"
+   },
+   {
+    "id": "modern-farmhouse-16",
+    "w": 1825,
+    "h": 862,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Modern farmhouse homes: concept view 16",
+    "source": "Chris Veness - Rendered design 019.png"
+   },
+   {
+    "id": "modern-farmhouse-17",
+    "w": 1536,
+    "h": 1024,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Modern farmhouse homes: concept view 17",
+    "source": "Chris Veness - Rendered design 020.png"
+   },
+   {
+    "id": "modern-farmhouse-18",
+    "w": 1536,
+    "h": 1024,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Modern farmhouse homes: concept view 18",
+    "source": "Chris Veness - Rendered design 021.png"
+   },
+   {
+    "id": "modern-farmhouse-19",
+    "w": 1433,
+    "h": 910,
+    "widths": [
+     480,
+     960,
+     1433
+    ],
+    "alt": "Modern farmhouse homes: concept view 19",
+    "source": "Chris Veness - Rendered design 022.png"
+   },
+   {
+    "id": "modern-farmhouse-20",
+    "w": 1774,
+    "h": 887,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Modern farmhouse homes: concept view 20",
+    "source": "Chris Veness - Rendered design 028.png"
+   }
+  ]
+ },
+ {
+  "slug": "contemporary-family-homes",
+  "name": "Contemporary family homes",
+  "type": "New home design",
+  "status": "Concept render",
+  "alt": "Concept render of a contemporary single-storey family home with a timber entry and a landscaped front garden",
+  "blurb": "Clean-lined single and two-storey homes in render, stone and timber, with covered entries and low-maintenance native gardens.",
+  "images": [
+   {
+    "id": "contemporary-family-homes-01",
+    "w": 1537,
+    "h": 1023,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Concept render of a contemporary single-storey family home with a timber entry and a landscaped front garden",
+    "source": "Chris Veness - Rendered design 042.png"
+   },
+   {
+    "id": "contemporary-family-homes-02",
+    "w": 1473,
+    "h": 1068,
+    "widths": [
+     480,
+     960,
+     1473
+    ],
+    "alt": "Contemporary family homes: concept view 2",
+    "source": "Chris Veness - Rendered design 001.png"
+   },
+   {
+    "id": "contemporary-family-homes-03",
+    "w": 1672,
+    "h": 941,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Contemporary family homes: concept view 3",
+    "source": "Chris Veness - Rendered design 006.png"
+   },
+   {
+    "id": "contemporary-family-homes-04",
+    "w": 1563,
+    "h": 1006,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Contemporary family homes: concept view 4",
+    "source": "Chris Veness - Rendered design 008.png"
+   },
+   {
+    "id": "contemporary-family-homes-05",
+    "w": 1536,
+    "h": 1024,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Contemporary family homes: concept view 5",
+    "source": "Chris Veness - Rendered design 029.png"
+   },
+   {
+    "id": "contemporary-family-homes-06",
+    "w": 1728,
+    "h": 910,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Contemporary family homes: concept view 6",
+    "source": "Chris Veness - Rendered design 035.png"
+   },
+   {
+    "id": "contemporary-family-homes-07",
+    "w": 1690,
+    "h": 931,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Contemporary family homes: concept view 7",
+    "source": "Chris Veness - Rendered design 036.png"
+   },
+   {
+    "id": "contemporary-family-homes-08",
+    "w": 1537,
+    "h": 1023,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Contemporary family homes: concept view 8",
+    "source": "Chris Veness - Rendered design 037.png"
+   },
+   {
+    "id": "contemporary-family-homes-09",
+    "w": 1537,
+    "h": 1023,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Contemporary family homes: concept view 9",
+    "source": "Chris Veness - Rendered design 038.png"
+   },
+   {
+    "id": "contemporary-family-homes-10",
+    "w": 1537,
+    "h": 1023,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Contemporary family homes: concept view 10",
+    "source": "Chris Veness - Rendered design 039.png"
+   },
+   {
+    "id": "contemporary-family-homes-11",
+    "w": 1537,
+    "h": 1023,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Contemporary family homes: concept view 11",
+    "source": "Chris Veness - Rendered design 040.png"
+   },
+   {
+    "id": "contemporary-family-homes-12",
+    "w": 1537,
+    "h": 1023,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Contemporary family homes: concept view 12",
+    "source": "Chris Veness - Rendered design 041.png"
+   },
+   {
+    "id": "contemporary-family-homes-13",
+    "w": 1537,
+    "h": 1023,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Contemporary family homes: concept view 13",
+    "source": "Chris Veness - Rendered design 043.png"
+   },
+   {
+    "id": "contemporary-family-homes-14",
+    "w": 1649,
+    "h": 954,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Contemporary family homes: concept view 14",
+    "source": "Chris Veness - Rendered design 044.png"
+   },
+   {
+    "id": "contemporary-family-homes-15",
+    "w": 1660,
+    "h": 947,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Contemporary family homes: concept view 15",
+    "source": "Chris Veness - Rendered design 045.png"
+   },
+   {
+    "id": "contemporary-family-homes-16",
+    "w": 1659,
+    "h": 948,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Contemporary family homes: concept view 16",
+    "source": "Chris Veness - Rendered design 046.png"
+   },
+   {
+    "id": "contemporary-family-homes-17",
+    "w": 1535,
+    "h": 1024,
+    "widths": [
+     480,
+     960,
+     1535
+    ],
+    "alt": "Contemporary family homes: concept view 17",
+    "source": "Chris Veness - Rendered design 047.png"
+   }
+  ]
+ },
+ {
+  "slug": "bowral-streetscapes",
+  "name": "Bowral streetscape concepts",
+  "type": "New home design",
+  "status": "Concept render",
+  "alt": "Concept render of a Bowral street lined with new homes, with a stone entry sign in the foreground",
+  "blurb": "Concept streetscapes showing how a group of homes can sit together in the Southern Highlands landscape.",
+  "images": [
+   {
+    "id": "bowral-streetscapes-01",
+    "w": 1536,
+    "h": 1024,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Concept render of a Bowral street lined with new homes, with a stone entry sign in the foreground",
+    "source": "Chris Veness - Rendered design 030.png"
+   },
+   {
+    "id": "bowral-streetscapes-02",
+    "w": 1597,
+    "h": 985,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Bowral streetscape concepts: concept view 2",
+    "source": "Chris Veness - Rendered design 031.png"
+   },
+   {
+    "id": "bowral-streetscapes-03",
+    "w": 1536,
+    "h": 1024,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Bowral streetscape concepts: concept view 3",
+    "source": "Chris Veness - Rendered design 032.png"
+   },
+   {
+    "id": "bowral-streetscapes-04",
+    "w": 1567,
+    "h": 1004,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Bowral streetscape concepts: concept view 4",
+    "source": "Chris Veness - Rendered design 033.png"
+   }
+  ]
+ },
+ {
+  "slug": "formal-garden-homes",
+  "name": "Homes with formal gardens",
+  "type": "New home design",
+  "status": "Concept render",
+  "alt": "Concept render of a single-storey home with a hedged front garden and a stepped entry path",
+  "blurb": "Traditional and transitional homes set behind structured gardens, with symmetrical frontages and stepped entries.",
+  "images": [
+   {
+    "id": "formal-garden-homes-01",
+    "w": 1536,
+    "h": 1024,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Concept render of a single-storey home with a hedged front garden and a stepped entry path",
+    "source": "Chris Veness - Rendered design 061.png"
+   },
+   {
+    "id": "formal-garden-homes-02",
+    "w": 1536,
+    "h": 1024,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Homes with formal gardens: concept view 2",
+    "source": "Chris Veness - Rendered design 060.png"
+   },
+   {
+    "id": "formal-garden-homes-03",
+    "w": 1536,
+    "h": 1024,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Homes with formal gardens: concept view 3",
+    "source": "Chris Veness - Rendered design 062.png"
+   },
+   {
+    "id": "formal-garden-homes-04",
+    "w": 1536,
+    "h": 1024,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Homes with formal gardens: concept view 4",
+    "source": "Chris Veness - Rendered design 063.png"
+   }
+  ]
+ },
+ {
+  "slug": "living-spaces",
+  "name": "Living spaces",
+  "type": "Interior design",
+  "status": "Concept render",
+  "alt": "Concept render of an open-plan living area with exposed timber beams, a fireplace and a kitchen island",
+  "blurb": "Open living areas and fireplace walls with warm timber, built-in shelving and a calm natural palette.",
+  "images": [
+   {
+    "id": "living-spaces-01",
+    "w": 1536,
+    "h": 1024,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Concept render of an open-plan living area with exposed timber beams, a fireplace and a kitchen island",
+    "source": "Chris Veness - Rendered design 025.png"
+   },
+   {
+    "id": "living-spaces-02",
+    "w": 1402,
+    "h": 1122,
+    "widths": [
+     480,
+     960,
+     1402
+    ],
+    "alt": "Living spaces: concept view 2",
+    "source": "0040E41C-964B-4A3E-9C6A-00CCE27C52DF.PNG"
+   },
+   {
+    "id": "living-spaces-03",
+    "w": 1402,
+    "h": 1122,
+    "widths": [
+     480,
+     960,
+     1402
+    ],
+    "alt": "Living spaces: concept view 3",
+    "source": "Chris Veness - Rendered design 065.png"
+   },
+   {
+    "id": "living-spaces-04",
+    "w": 1536,
+    "h": 1024,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Living spaces: concept view 4",
+    "source": "Chris Veness - Rendered design 069.png"
+   },
+   {
+    "id": "living-spaces-05",
+    "w": 1536,
+    "h": 1024,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Living spaces: concept view 5",
+    "source": "Chris Veness - Rendered design 027.png"
+   },
+   {
+    "id": "living-spaces-06",
+    "w": 1536,
+    "h": 1024,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Living spaces: concept view 6",
+    "source": "Chris Veness - Rendered design 026.png"
+   },
+   {
+    "id": "living-spaces-07",
+    "w": 1536,
+    "h": 1024,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Living spaces: concept view 7",
+    "source": "Chris Veness - Rendered design 023.png"
+   },
+   {
+    "id": "living-spaces-08",
+    "w": 1672,
+    "h": 941,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Living spaces: concept view 8",
+    "source": "AC71A163-ABEB-4BB2-94A6-6637AE7926CD.PNG"
+   }
+  ]
+ },
+ {
+  "slug": "kitchen-and-dining",
+  "name": "Kitchen and dining",
+  "type": "Interior design",
+  "status": "Status to be confirmed",
+  "alt": "White kitchen with under-cabinet lighting, a cooktop, built-in oven and a coffee station",
+  "blurb": "Kitchen and dining areas planned for everyday use, with practical joinery, concealed storage and soft lighting.",
+  "images": [
+   {
+    "id": "kitchen-and-dining-01",
+    "w": 1448,
+    "h": 1086,
+    "widths": [
+     480,
+     960,
+     1448
+    ],
+    "alt": "White kitchen with under-cabinet lighting, a cooktop, built-in oven and a coffee station",
+    "source": "Chris Veness - Dining area - Nick.png"
+   },
+   {
+    "id": "kitchen-and-dining-02",
+    "w": 1448,
+    "h": 1086,
+    "widths": [
+     480,
+     960,
+     1448
+    ],
+    "alt": "Kitchen and dining: concept view 2",
+    "source": "Chris Veness - kitchen and dining - Nick.png"
+   }
+  ]
+ },
+ {
+  "slug": "studies-and-nooks",
+  "name": "Studies and nooks",
+  "type": "Interior design",
+  "status": "Concept render",
+  "alt": "Concept render of a home study with a timber desk, built-in shelving and a garden view",
+  "blurb": "Small working spaces carved out of the plan: built-in desks, shelving and good daylight.",
+  "images": [
+   {
+    "id": "studies-and-nooks-01",
+    "w": 1536,
+    "h": 1024,
+    "widths": [
+     480,
+     960,
+     1536
+    ],
+    "alt": "Concept render of a home study with a timber desk, built-in shelving and a garden view",
+    "source": "ACFA4862-5EFF-4CF3-8F70-19BE21E07D6B.PNG"
+   },
+   {
+    "id": "studies-and-nooks-02",
+    "w": 1122,
+    "h": 1402,
+    "widths": [
+     480,
+     960,
+     1122
+    ],
+    "alt": "Studies and nooks: concept view 2",
+    "source": "CF8F2632-630A-478C-968C-C3864FBEFF6C.PNG"
+   },
+   {
+    "id": "studies-and-nooks-03",
+    "w": 1122,
+    "h": 1402,
+    "widths": [
+     480,
+     960,
+     1122
+    ],
+    "alt": "Studies and nooks: concept view 3",
+    "source": "Study nook.PNG"
+   }
+  ]
+ },
+ {
+  "slug": "entries-and-storage",
+  "name": "Entries, laundry and storage",
+  "type": "Interior design",
+  "status": "Concept render",
+  "alt": "Concept render of a home entry with a console table, mirror and timber-framed opening",
+  "blurb": "The practical spaces that make a house work: entries with seating, mudroom joinery and well-planned laundries.",
+  "images": [
+   {
+    "id": "entries-and-storage-01",
+    "w": 1402,
+    "h": 1122,
+    "widths": [
+     480,
+     960,
+     1402
+    ],
+    "alt": "Concept render of a home entry with a console table, mirror and timber-framed opening",
+    "source": "Chris Veness - Rendered design 024.png"
+   },
+   {
+    "id": "entries-and-storage-02",
+    "w": 1122,
+    "h": 1402,
+    "widths": [
+     480,
+     960,
+     1122
+    ],
+    "alt": "Entries, laundry and storage: concept view 2",
+    "source": "Chris Veness - Rendered design 067.png"
+   },
+   {
+    "id": "entries-and-storage-03",
+    "w": 1087,
+    "h": 1447,
+    "widths": [
+     480,
+     960,
+     1087
+    ],
+    "alt": "Entries, laundry and storage: concept view 3",
+    "source": "674FB851-B07F-42D6-9FA5-417C6DA20B4E.PNG"
+   },
+   {
+    "id": "entries-and-storage-04",
+    "w": 1096,
+    "h": 1436,
+    "widths": [
+     480,
+     960,
+     1096
+    ],
+    "alt": "Entries, laundry and storage: concept view 4",
+    "source": "Chris Veness - Rendered design 068.png"
+   },
+   {
+    "id": "entries-and-storage-05",
+    "w": 1100,
+    "h": 1429,
+    "widths": [
+     480,
+     960,
+     1100
+    ],
+    "alt": "Entries, laundry and storage: concept view 5",
+    "source": "Chris Veness - Rendered design 070.png"
+   },
+   {
+    "id": "entries-and-storage-06",
+    "w": 1297,
+    "h": 1213,
+    "widths": [
+     480,
+     960,
+     1297
+    ],
+    "alt": "Entries, laundry and storage: concept view 6",
+    "source": "0E0F4821-A9B9-470F-BD01-A1838D240726.PNG"
+   },
+   {
+    "id": "entries-and-storage-07",
+    "w": 1122,
+    "h": 1402,
+    "widths": [
+     480,
+     960,
+     1122
+    ],
+    "alt": "Entries, laundry and storage: concept view 7",
+    "source": "AEEB9154-0A07-464C-B1A2-5126D26AE12A.PNG"
+   }
+  ]
+ }
+]
