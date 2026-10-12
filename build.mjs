@@ -109,12 +109,12 @@ ${body}
 }
 
 /* ---------- Components ---------- */
-const pcard = (p, cls = '', dim = false, eager = false, sizes = '(min-width: 900px) 40vw, 90vw') => `
+const pcard = (p, cls = '', dim = false, eager = false, sizes = '(min-width: 900px) 40vw, 90vw', quiet = false) => `
 <a class="pcard reveal ${cls}" href="/projects/${p.slug}/">
   <div class="frame">${imgTag(p.cover, sizes, { eager })}</div>
   <h3>${p.name}</h3>
-  <p class="meta">${p.type}<span class="status">${p.status}</span></p>
-  ${dim ? `<div class="dim" aria-hidden="true"><i></i><span>${p.status.toUpperCase()}</span><i></i></div>` : ''}
+  <p class="meta">${p.type}${quiet && p.status === 'Concept render' ? '' : `<span class="status">${p.status}</span>`}</p>
+  ${dim && !(quiet && p.status === 'Concept render') ? `<div class="dim" aria-hidden="true"><i></i><span>${p.status.toUpperCase()}</span><i></i></div>` : ''}
 </a>`;
 
 const serviceRows = (lv = 3) => `<div class="rows">${services.map((s) => `
@@ -197,7 +197,7 @@ pages['/'] = layout({
     <div class="car-ctl"><span class="car-count" aria-hidden="true"><b id="car-n">5</b> / 9</span></div></div>
   <div class="carousel" role="region" aria-roledescription="carousel" aria-label="Selected projects" tabindex="0">
     <ul class="car-track">
-      ${['formal-garden-homes', 'contemporary-family-homes', 'modern-farmhouse', 'hillside-residences', 'country-homes', 'bowral-streetscapes', 'living-spaces', 'kitchen-and-dining', 'studies-and-nooks'].map((k) => P[k]).map((p) => { const feat = p.slug === 'country-homes'; return `<li class="car-item${feat ? ' feature' : ''}"${feat ? ' data-start' : ''}>${pcard(p, feat ? 'feature' : '', feat, feat, '(min-width: 900px) 56vw, 82vw').replace(' reveal', '')}</li>`; }).join('')}
+      ${['formal-garden-homes', 'contemporary-family-homes', 'modern-farmhouse', 'hillside-residences', 'country-homes', 'bowral-streetscapes', 'living-spaces', 'kitchen-and-dining', 'studies-and-nooks'].map((k) => P[k]).map((p) => { const feat = p.slug === 'country-homes'; return `<li class="car-item${feat ? ' feature' : ''}"${feat ? ' data-start' : ''}>${pcard(p, feat ? 'feature' : '', feat, feat, '(min-width: 900px) 56vw, 82vw', true).replace(' reveal', '')}</li>`; }).join('')}
     </ul>
   </div>
   <div class="wrap stagger-foot"><a class="tlink" href="/projects/">View all projects ${ARR}</a></div>
