@@ -113,7 +113,7 @@ const pcard = (p, cls = '', dim = false, eager = false, sizes = '(min-width: 900
 <a class="pcard reveal ${cls}" href="/projects/${p.slug}/">
   <div class="frame">${imgTag(p.cover, sizes, { eager })}</div>
   <h3>${p.name}</h3>
-  <p class="meta">${p.type}${quiet ? '' : `<span class="status">${p.status}</span>`}</p>
+  <p class="meta">${p.type}${quiet || p.status === 'Concept render' ? '' : `<span class="status">${p.status}</span>`}</p>
   ${dim && !quiet ? `<div class="dim" aria-hidden="true"><i></i><span>${p.status.toUpperCase()}</span><i></i></div>` : ''}
 </a>`;
 
@@ -264,9 +264,9 @@ for (const p of projects) {
     desc: cut(`${p.name}, ${p.type.toLowerCase()} by Chris Veness. ${p.blurb}`), ogImage: p.cover, preload: p.cover,
     ld: [{ '@type': 'CollectionPage', name: p.name, url: `${SITE}/projects/${p.slug}/`, description: p.blurb, isPartOf: { '@id': `${SITE}/#website` }, about: { '@id': `${SITE}/#business` }, primaryImageOfPage: { '@type': 'ImageObject', contentUrl: `${SITE}/assets/img/${p.cover.id}-${p.cover.widths.at(-1)}.webp`, description: p.cover.alt } }],
     body: `${head([['/', 'Home'], ['/projects/', 'Projects'], [`/projects/${p.slug}/`, p.name]], p.name)}
-<div class="wrap"><p style="margin-top:-1.5rem;color:var(--text-2)">${p.type}<span class="status">${p.status}</span></p>
+<div class="wrap"><p style="margin-top:-1.5rem;color:var(--text-2)">${p.type}${p.status === 'Concept render' ? '' : `<span class="status">${p.status}</span>`}</p>
   <div class="hero-img" style="margin-top:2rem">${imgTag(p.cover, '(min-width: 1440px) 1320px, 100vw', { eager: true })}</div>
-  <dl class="facts"><div><dt>Project type</dt><dd>${p.type}</dd></div><div><dt>Status</dt><dd>${p.status}</dd></div><div><dt>Location</dt><dd>Southern Highlands (suburb to be confirmed)</dd></div></dl>
+  <dl class="facts"><div><dt>Project type</dt><dd>${p.type}</dd></div>${p.status === 'Concept render' ? '' : `<div><dt>Status</dt><dd>${p.status}</dd></div>`}<div><dt>Location</dt><dd>Southern Highlands (suburb to be confirmed)</dd></div></dl>
 </div>
 <section class="section--tight"><div class="wrap prose">
   <div class="two-col"><div class="l"><h2>Overview</h2></div><div class="r"><p>${p.blurb}</p></div></div>
