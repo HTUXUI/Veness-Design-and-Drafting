@@ -248,7 +248,7 @@ const group = (type) => projects.filter((p) => p.type === type);
 pages['/projects/'] = layout({
   path: '/projects/', title: 'Projects | Veness Design & Drafting, Bowral',
   desc: 'Residential design by Chris Veness for Bowral and the Southern Highlands: new home concepts and interior design, grouped by style.',
-  body: `${head([['/', 'Home'], ['/projects/', 'Projects']], 'Projects', 'Homes and interiors, grouped by style. Each group shows its status, so you can tell a concept render from a completed build.')}
+  body: `${head([['/', 'Home'], ['/projects/', 'Projects']], 'Projects', 'Homes and interiors, grouped by style. Select a group to see every design in it.')}
 ${[['New homes', 'New home design'], ['Interiors', 'Interior design']].map(([h, t], gi) => `
 <section class="wrap" aria-labelledby="g${gi}" style="padding-bottom:var(--section)"><h2 id="g${gi}" style="font-size:var(--fs-h3);margin-bottom:2rem;border-top:1px solid var(--rule);padding-top:2rem">${h} <span class="count">${group(t).length} groups</span></h2>
 <ul class="grid-3">${group(t).map((p, i) => `<li>${pcard(p, '', false, gi === 0 && i === 0, '(min-width: 900px) 30vw, 90vw')}<p class="small" style="margin-top:.5rem">${p.images.length} ${p.images.length === 1 ? 'design' : 'designs'}</p></li>`).join('')}</ul></section>`).join('')}
