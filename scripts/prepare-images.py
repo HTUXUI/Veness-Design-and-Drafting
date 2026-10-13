@@ -14,7 +14,7 @@ C = [
  dict(slug="country-homes", name="Country homes", type="New home design", status="Concept render", cover=70,
       alt="Concept render of a low country home with timber cladding and a metal roof, set in open grassland",
       blurb="Low, timber-clad homes with metal roofs, set into open paddocks and bushland. Deep verandahs, gravel drives and generous glazing connect each home to its landscape.",
-      imgs=[70,2,4,3,20,14,18,19,13,7,21,88,5,8,71,72]),
+      imgs=[70,2,20,14,18,19,13,7,88,5,8,71,72]),
  dict(slug="hillside-residences", name="Hillside residences", type="New home design", status="Concept render", cover=80,
       alt="Concept render of a two-storey home with gabled glazing on a hillside at sunset",
       blurb="Larger two-storey concepts that use slope and view, with gabled glazing, layered rooflines and gravel approaches.",

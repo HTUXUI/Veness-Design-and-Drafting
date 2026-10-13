@@ -405,3 +405,5 @@ input, select, textarea, button, a, summary, .summary, .status-box { scroll-marg
 /* Reserve the carousel's height before the script runs, so nothing shifts when it starts */
 .carousel { min-height: calc(min(82vw, 860px) * 0.667 + 130px); }
 @media (min-width: 900px) { .carousel { min-height: calc(min(56vw, 860px) * 0.667 + 130px); } }
+
+.bare .meta { display: none; }

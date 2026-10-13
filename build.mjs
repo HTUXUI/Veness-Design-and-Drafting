@@ -140,13 +140,11 @@ const form = () => { const id = 'f' + ++fid; return `
   </div>
   <div class="row2">
     <div class="field"><label for="${id}-phone">Phone <span class="opt">(optional)</span></label><input id="${id}-phone" name="phone" type="tel" autocomplete="tel"><p class="err" id="${id}-phone-e"></p></div>
-    <div class="field"><label for="${id}-suburb">Property suburb</label><input id="${id}-suburb" name="suburb" autocomplete="address-level2" required><p class="err" id="${id}-suburb-e"></p></div>
+    <div class="field"><label for="${id}-suburb">Project location</label><input id="${id}-suburb" name="suburb" autocomplete="address-level2" required><p class="err" id="${id}-suburb-e"></p></div>
   </div>
   <div class="field"><label for="${id}-type">Project type</label>
     <select id="${id}-type" name="type" required><option value="">Choose one</option><option>New home</option><option>Renovation/extension</option><option>Interiors</option><option>Drafting/documentation</option><option>Not sure yet</option></select><p class="err" id="${id}-type-e"></p></div>
-  <div class="field"><label for="${id}-message">About your project</label><textarea id="${id}-message" name="message" required></textarea><p class="err" id="${id}-message-e"></p></div>
-  <div class="field"><fieldset class="radios" style="border:0;padding:0;margin:0"><legend style="font-weight:500;font-size:1.0625rem;margin-bottom:.25rem">Preferred contact <span class="opt" style="color:var(--text-2);font-weight:400">(optional)</span></legend>
-    <label><input type="radio" name="contact" value="Email"> Email</label><label><input type="radio" name="contact" value="Phone"> Phone</label></fieldset></div>
+  <div class="field"><label for="${id}-message">Tell us about your ideas</label><textarea id="${id}-message" name="message" required></textarea><p class="err" id="${id}-message-e"></p></div>
   <div class="hp" aria-hidden="true"><label>Leave this empty <input name="company" tabindex="-1" autocomplete="off"></label></div>
   <p class="small">Chris will use these details only to reply to your enquiry. See the <a href="/privacy/">privacy notice</a>. You won’t be added to any mailing list.</p>
   <button class="btn" type="submit"><span class="spin" aria-hidden="true"></span><span class="lbl">Send project enquiry</span></button>
@@ -271,18 +269,17 @@ for (const p of projects) {
   <dl class="facts"><div><dt>Project type</dt><dd>${p.type}</dd></div><div><dt>Status</dt><dd>${p.status}</dd></div><div><dt>Location</dt><dd>Southern Highlands (suburb to be confirmed)</dd></div></dl>
 </div>
 <section class="section--tight"><div class="wrap prose">
-  <div class="two-col"><div class="l"><h2>Overview</h2></div><div class="r"><p>${p.blurb}</p>${p.status === 'Concept render' ? '<p>These images are concept renders. They show design intent and are not completed buildings.</p>' : ''}</div></div>
+  <div class="two-col"><div class="l"><h2>Overview</h2></div><div class="r"><p>${p.blurb}</p></div></div>
 </div></section>
 ${p.images.length > 1 ? `<section class="wrap" aria-labelledby="gal-h" style="padding-bottom:var(--section)"><h2 id="gal-h" style="font-size:var(--fs-h3);margin-bottom:2rem">More views</h2>
   <ul class="gallery">${p.images.slice(1).map((im, i) => `<li class="reveal"><figure>${imgTag(im, '(min-width: 900px) 48vw, 100vw')}<figcaption>${p.name} · view ${i + 2} of ${p.images.length}</figcaption></figure></li>`).join('')}</ul></section>` : ''}
 <section class="section--tight rule-top"><div class="wrap prose">
-  <div class="two-col"><div class="l"><h2>Client brief</h2></div><div class="r"><div class="pending"><span class="tag">CONTENT NEEDED</span><p style="margin:0">Chris to supply: what the client asked for and the problem the design solved.</p></div></div></div>
-  <div class="two-col" style="margin-top:3rem"><div class="l"><h2>Key design decisions</h2></div><div class="r"><div class="pending"><span class="tag">CONTENT NEEDED</span><p style="margin:0">Chris to supply: the decisions that shaped the design, and why.</p></div></div></div>
-  <div class="two-col" style="margin-top:3rem"><div class="l"><h2>Chris’s scope</h2></div><div class="r"><div class="pending"><span class="tag">CONTENT NEEDED</span><p style="margin:0">Chris to supply: which services were provided on this project.</p></div></div></div>
-  <div class="two-col" style="margin-top:3rem"><div class="l"><h2>Related service</h2></div><div class="r"><a class="tlink" href="${svc.path}">${svc.name} ${ARR}</a></div></div>
+  <div class="two-col"><div class="l"><h2>Tell us what you have in mind</h2></div><div class="r"><p>Planning a new home, renovation or extension? Tell us what you’d like to create, where your property is located and what you want to achieve. You don’t need a complete brief—an initial idea is enough to start the conversation.</p></div></div>
+  <div class="two-col" style="margin-top:3rem"><div class="l"><h2>What matters to you?</h2></div><div class="r"><p>More space, better natural light, easier everyday living or a stronger connection to the outdoors? Share your priorities, preferred style and any inspiration you’ve collected. An indicative budget and timeframe are helpful if you have them.</p></div></div>
+  <div class="two-col" style="margin-top:3rem"><div class="l"><h2>How we can help</h2></div><div class="r"><p>From early concepts and floor plans to detailed drawings and approval documentation, we’ll help you understand the next steps and the services your project needs.</p><p><a class="tlink" href="${svc.path}">${svc.name} ${ARR}</a></p></div></div>
 </div></section>
-<section class="section rule-top"><div class="wrap"><h2 style="font-size:var(--fs-h3);margin-bottom:2rem">More ${p.type === 'Interior design' ? 'interiors' : 'homes'}</h2><ul class="grid-3">${others.map((o) => `<li>${pcard(o, '', false, false, '(min-width: 900px) 30vw, 90vw')}</li>`).join('')}</ul></div></section>
-${ctaBand('Thinking about something similar?')}`,
+<section class="section--tight cta-band" aria-labelledby="disc-h"><div class="wrap inner"><div><h2 id="disc-h">Let’s discuss your ideas</h2><p class="lede" style="margin-top:1rem">Get in touch to talk about your project and how we can help bring it to life.</p></div><div class="actions"><a class="btn" href="/contact/#enquiry">Tell us about your project ${ARR}</a></div></div></section>
+<section class="section rule-top"><div class="wrap"><h2 style="font-size:var(--fs-h3);margin-bottom:2rem">More ${p.type === 'Interior design' ? 'interiors' : 'homes'}</h2><ul class="grid-3 bare">${others.map((o) => `<li>${pcard(o, '', false, false, '(min-width: 900px) 30vw, 90vw')}</li>`).join('')}</ul></div></section>`,
   });
 }
 

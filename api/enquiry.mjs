@@ -27,9 +27,9 @@ function validate(b) {
   if (d.phone && !/^\+?[0-9 ()\-]{8,20}$/.test(d.phone)) errors.phone = 'Enter a valid phone number.';
   if (d.contact && !['Email', 'Phone'].includes(d.contact)) errors.contact = 'Choose Email or Phone.';
   if (d.contact === 'Phone' && !d.phone) errors.phone = 'Enter a phone number, or choose Email.';
-  if (!d.suburb) errors.suburb = 'Enter the property suburb.';
+  if (!d.suburb) errors.suburb = 'Enter the location of your project.';
   if (!TYPES.includes(d.type)) errors.type = 'Choose a project type.';
-  if (!d.message) errors.message = 'Tell Chris about your project.';
+  if (!d.message) errors.message = 'Tell us about your ideas.';
   return { d, errors };
 }
 
@@ -63,9 +63,9 @@ export default async function handler(req, res) {
 
   recent.push(now); hits.set(ip, recent);
 
-  const rows = [['Name', d.name], ['Email', d.email], ['Phone', d.phone || 'Not given'], ['Property suburb', d.suburb], ['Project type', d.type], ['Preferred contact', d.contact || 'No preference']];
-  const html = `<h2>New project enquiry</h2><table cellpadding="6">${rows.map(([k, v]) => `<tr><td><b>${k}</b></td><td>${esc(v)}</td></tr>`).join('')}</table><h3>About the project</h3><p style="white-space:pre-wrap">${esc(d.message)}</p><p style="color:#666">Sent from the Veness website enquiry form. Reply to this email to reach ${esc(d.name)}.</p>`;
-  const text = rows.map(([k, v]) => `${k}: ${v}`).join('\n') + `\n\nAbout the project:\n${d.message}\n`;
+  const rows = [['Name', d.name], ['Email', d.email], ['Phone', d.phone || 'Not given'], ['Project location', d.suburb], ['Project type', d.type], ['Preferred contact', d.contact || 'No preference']];
+  const html = `<h2>New project enquiry</h2><table cellpadding="6">${rows.map(([k, v]) => `<tr><td><b>${k}</b></td><td>${esc(v)}</td></tr>`).join('')}</table><h3>Ideas</h3><p style="white-space:pre-wrap">${esc(d.message)}</p><p style="color:#666">Sent from the Veness website enquiry form. Reply to this email to reach ${esc(d.name)}.</p>`;
+  const text = rows.map(([k, v]) => `${k}: ${v}`).join('\n') + `\n\nIdeas:\n${d.message}\n`;
 
   try {
     const r = await fetch(process.env.RESEND_API_URL || 'https://api.resend.com/emails', {

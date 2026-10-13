@@ -221,9 +221,9 @@
       name: (v) => (v.trim() ? '' : 'Enter your name.'),
       email: (v) => (!v.trim() ? 'Enter your email address.' : emailOk(v.trim()) ? '' : 'Enter an email address like name@example.com.'),
       phone: (v) => (v.trim() ? (phoneOk(v) ? '' : 'Enter a phone number using digits and spaces, for example 0403 082 845.') : (contactPref() === 'Phone' ? 'Enter a phone number, or choose Email as your preferred contact.' : '')),
-      suburb: (v) => (v.trim() ? '' : 'Enter the suburb of the property.'),
+      suburb: (v) => (v.trim() ? '' : 'Enter the location of your project.'),
       type: (v) => (v ? '' : 'Choose a project type. “Not sure yet” is fine.'),
-      message: (v) => (v.trim() ? '' : 'Tell Chris a little about your project.'),
+      message: (v) => (v.trim() ? '' : 'Tell us a little about your ideas.'),
     };
 
     const setErr = (name, msg) => {
