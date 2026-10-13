@@ -407,3 +407,6 @@ input, select, textarea, button, a, summary, .summary, .status-box { scroll-marg
 @media (min-width: 900px) { .carousel { min-height: calc(min(56vw, 860px) * 0.667 + 130px); } }
 
 .bare .meta { display: none; }
+
+@media (min-width: 900px) { .split.solo .col-b { grid-column: 1 / span 8; } }
+.split.solo { align-items: start; }

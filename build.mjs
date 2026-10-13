@@ -113,7 +113,7 @@ const pcard = (p, cls = '', dim = false, eager = false, sizes = '(min-width: 900
 <a class="pcard reveal ${cls}" href="/projects/${p.slug}/">
   <div class="frame">${imgTag(p.cover, sizes, { eager })}</div>
   <h3>${p.name}</h3>
-  <p class="meta">${p.type}${quiet || p.status === 'Concept render' ? '' : `<span class="status">${p.status}</span>`}</p>
+  <p class="meta">${p.type}</p>
   ${dim && !quiet ? `<div class="dim" aria-hidden="true"><i></i><span>${p.status.toUpperCase()}</span><i></i></div>` : ''}
 </a>`;
 
@@ -201,8 +201,7 @@ pages['/'] = layout({
   <div class="wrap stagger-foot"><a class="tlink" href="/projects/">View all projects ${ARR}</a></div>
 </section>
 
-<section class="section rule-top" aria-labelledby="chris-h"><div class="wrap split">
-  <div class="col-a reveal"><figure class="portrait-img"><img src="/assets/chris-veness.webp" width="322" height="405" alt="Chris Veness, wearing glasses and a light blue shirt" loading="lazy" decoding="async"></figure></div>
+<section class="section rule-top" aria-labelledby="chris-h"><div class="wrap split solo">
   <div class="col-b reveal d1">
     <p class="eyebrow">Meet Chris</p>
     <h2 id="chris-h">A personal approach to your home.</h2>
@@ -264,9 +263,9 @@ for (const p of projects) {
     desc: cut(`${p.name}, ${p.type.toLowerCase()} by Chris Veness. ${p.blurb}`), ogImage: p.cover, preload: p.cover,
     ld: [{ '@type': 'CollectionPage', name: p.name, url: `${SITE}/projects/${p.slug}/`, description: p.blurb, isPartOf: { '@id': `${SITE}/#website` }, about: { '@id': `${SITE}/#business` }, primaryImageOfPage: { '@type': 'ImageObject', contentUrl: `${SITE}/assets/img/${p.cover.id}-${p.cover.widths.at(-1)}.webp`, description: p.cover.alt } }],
     body: `${head([['/', 'Home'], ['/projects/', 'Projects'], [`/projects/${p.slug}/`, p.name]], p.name)}
-<div class="wrap"><p style="margin-top:-1.5rem;color:var(--text-2)">${p.type}${p.status === 'Concept render' ? '' : `<span class="status">${p.status}</span>`}</p>
+<div class="wrap"><p style="margin-top:-1.5rem;color:var(--text-2)">${p.type}</p>
   <div class="hero-img" style="margin-top:2rem">${imgTag(p.cover, '(min-width: 1440px) 1320px, 100vw', { eager: true })}</div>
-  <dl class="facts"><div><dt>Project type</dt><dd>${p.type}</dd></div>${p.status === 'Concept render' ? '' : `<div><dt>Status</dt><dd>${p.status}</dd></div>`}<div><dt>Location</dt><dd>Southern Highlands (suburb to be confirmed)</dd></div></dl>
+  <dl class="facts"><div><dt>Project type</dt><dd>${p.type}</dd></div><div><dt>Location</dt><dd>Southern Highlands (suburb to be confirmed)</dd></div></dl>
 </div>
 <section class="section--tight"><div class="wrap prose">
   <div class="two-col"><div class="l"><h2>Overview</h2></div><div class="r"><p>${p.blurb}</p></div></div>
@@ -376,12 +375,11 @@ pages['/meet-chris/'] = layout({
   desc: 'Meet Chris Veness, founder of Veness Design & Drafting: a personal, honest approach to new homes, renovations and extensions in the Southern Highlands.',
   ld: [{ '@type': 'Person', name: 'Chris Veness', jobTitle: 'Building designer', url: `${SITE}/meet-chris/`, worksFor: { '@id': `${SITE}/#business` } }],
   body: `${head([['/', 'Home'], ['/meet-chris/', 'Meet Chris']], 'A personal approach to your home.')}
-<section class="section--tight"><div class="wrap split">
+<section class="section--tight"><div class="wrap split solo">
   <div class="col-b prose"><p class="lede" style="color:var(--text)">${bio.lede}</p>
     ${bio.sections.map((sec) => `<h2>${sec.h}</h2>${sec.paras.map((t) => `<p>${t}</p>`).join('')}`).join('')}
     <p class="lede" style="color:var(--text);margin-top:2.5rem;border-top:1px solid var(--rule);padding-top:2rem">${bio.closing}</p>
     <div class="actions" style="margin-top:2rem"><a class="btn" href="/contact/">Discuss your project ${ARR}</a><a class="tlink" href="/client-stories/">Read client stories</a></div></div>
-  <div class="col-a" style="align-self:start;position:sticky;top:calc(var(--header-h) + 1.5rem)"><figure class="portrait-img"><img src="/assets/chris-veness.webp" width="322" height="405" alt="Chris Veness, wearing glasses and a light blue shirt" loading="lazy" decoding="async"></figure></div>
 </div></section>${ctaBand()}`,
 });
 
