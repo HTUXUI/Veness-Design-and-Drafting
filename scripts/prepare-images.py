@@ -12,31 +12,31 @@ WIDTHS = [480, 960, 1536]
 
 C = [
  dict(slug="country-homes", name="Country homes", type="New home design", status="Concept render", cover=70,
-      alt="Concept render of a low country home with timber cladding and a metal roof, set in open grassland",
+      alt="A low country home with timber cladding and a metal roof, set in open grassland",
       blurb="Low, timber-clad homes with metal roofs, set into open paddocks and bushland. Deep verandahs, gravel drives and generous glazing connect each home to its landscape.",
       imgs=[70,2,20,14,18,19,13,7,88,5,8,71,72]),
  dict(slug="hillside-residences", name="Hillside residences", type="New home design", status="Concept render", cover=80,
-      alt="Concept render of a two-storey home with gabled glazing on a hillside at sunset",
+      alt="A two-storey home with gabled glazing on a hillside at sunset",
       blurb="Larger two-storey concepts that use slope and view, with gabled glazing, layered rooflines and gravel approaches.",
       imgs=[80,73,74,75,76,77,78,79,81,86]),
  dict(slug="modern-farmhouse", name="Modern farmhouse homes", type="New home design", status="Concept render", cover=41,
-      alt="Concept render of a white board-and-batten farmhouse-style home with a front verandah and dormer windows",
+      alt="A white board-and-batten farmhouse-style home with a front verandah and dormer windows",
       blurb="White board-and-batten homes with dark roofs, front porches and timber garage doors, designed for suburban and village blocks.",
-      imgs=[41,25,26,27,28,30,32,33,34,35,36,37,38,39,40,42,43,44,45,51]),
+      imgs=[41,25,26,27,28,30,32,33,35,36,37,39,40,42,43,45,51]),
  dict(slug="contemporary-family-homes", name="Contemporary family homes", type="New home design", status="Concept render", cover=64,
-      alt="Concept render of a contemporary single-storey family home with a timber entry and a landscaped front garden",
-      blurb="Clean-lined single and two-storey homes in render, stone and timber, with covered entries and low-maintenance native gardens.",
+      alt="A contemporary single-storey family home with a timber entry and a landscaped front garden",
+      blurb="Clean-lined single and two-storey homes with smooth-finished walls, stone and timber, covered entries and low-maintenance native gardens.",
       imgs=[64,24,29,31,52,57,58,59,60,61,62,63,65,66,67,68,69]),
  dict(slug="bowral-streetscapes", name="Bowral streetscape concepts", type="New home design", status="Concept render", cover=53,
-      alt="Concept render of a Bowral street lined with new homes, with a stone entry sign in the foreground",
+      alt="A Bowral street lined with new homes, with a stone entry sign in the foreground",
       blurb="Concept streetscapes showing how a group of homes can sit together in the Southern Highlands landscape.",
       imgs=[53,54,55,56]),
  dict(slug="formal-garden-homes", name="Homes with formal gardens", type="New home design", status="Concept render", cover=83,
-      alt="Concept render of a single-storey home with a hedged front garden and a stepped entry path",
+      alt="A single-storey home with a hedged front garden and a stepped entry path",
       blurb="Traditional and transitional homes set behind structured gardens, with symmetrical frontages and stepped entries.",
       imgs=[83,82,84,85]),
  dict(slug="living-spaces", name="Living spaces", type="Interior design", status="Concept render", cover=48,
-      alt="Concept render of an open-plan living area with exposed timber beams, a fireplace and a kitchen island",
+      alt="An open-plan living area with exposed timber beams, a fireplace and a kitchen island",
       blurb="Open living areas and fireplace walls with warm timber, built-in shelving and a calm natural palette.",
       imgs=[48,0,87,91,50,49,46,15]),
  dict(slug="kitchen-and-dining", name="Kitchen and dining", type="Interior design", status="Status to be confirmed", cover=23,
@@ -44,11 +44,11 @@ C = [
       blurb="Kitchen and dining areas planned for everyday use, with practical joinery, concealed storage and soft lighting.",
       imgs=[23,97]),
  dict(slug="studies-and-nooks", name="Studies and nooks", type="Interior design", status="Concept render", cover=16,
-      alt="Concept render of a home study with a timber desk, built-in shelving and a garden view",
+      alt="A home study with a timber desk, built-in shelving and a garden view",
       blurb="Small working spaces carved out of the plan: built-in desks, shelving and good daylight.",
-      imgs=[16,22,98]),
+      imgs=[16,22]),
  dict(slug="entries-and-storage", name="Entries, laundry and storage", type="Interior design", status="Concept render", cover=47,
-      alt="Concept render of a home entry with a console table, mirror and timber-framed opening",
+      alt="A home entry with a console table, mirror and timber-framed opening",
       blurb="The practical spaces that make a house work: entries with seating, mudroom joinery and well-planned laundries.",
       imgs=[47,89,11,90,92,1,17]),
 ]
@@ -70,7 +70,7 @@ for c in C:
         if i in used: raise SystemExit(f"image {i} used twice")
         used[i] = c["slug"]
         base = f"{c['slug']}-{n:02d}"
-        d = process(i, base); d["alt"] = f"{c['alt']}" if n == 1 else f"{c['name']}: concept view {n}"
+        d = process(i, base); d["alt"] = f"{c['alt']}" if n == 1 else f"{c['name']}: view {n}"
         d["source"] = files[i]; items.append(d)
     out = {k: v for k, v in c.items() if k not in ("imgs", "cover")}; out["images"] = items
     manifest.append(out)

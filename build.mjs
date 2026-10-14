@@ -118,7 +118,7 @@ const pcard = (p, cls = '', dim = false, eager = false, sizes = '(min-width: 900
 </a>`;
 
 const serviceRows = (lv = 3) => `<div class="rows">${services.map((s) => `
-  <a class="row" href="${s.path}"><h${lv}>${s.name}</h${lv}><p>${s.short}</p><span class="thumb" aria-hidden="true">${imgTag(P[s.img].cover, '160px', { alt: '' })}</span><span class="go"><span class="t">Explore service</span>${ARR}</span></a>`).join('')}
+  <a class="row" href="${s.path}"><h${lv}>${s.name}</h${lv}><p>${s.short}</p><span class="go"><span class="t">Explore service</span>${ARR}</span></a>`).join('')}
 </div>`;
 
 const steps = [
@@ -265,7 +265,7 @@ for (const p of projects) {
     body: `${head([['/', 'Home'], ['/projects/', 'Projects'], [`/projects/${p.slug}/`, p.name]], p.name)}
 <div class="wrap"><p style="margin-top:-1.5rem;color:var(--text-2)">${p.type}</p>
   <div class="hero-img" style="margin-top:2rem">${imgTag(p.cover, '(min-width: 1440px) 1320px, 100vw', { eager: true })}</div>
-  <dl class="facts"><div><dt>Project type</dt><dd>${p.type}</dd></div><div><dt>Location</dt><dd>Southern Highlands (suburb to be confirmed)</dd></div></dl>
+  <dl class="facts"><div><dt>Project type</dt><dd>${p.type}</dd></div><div><dt>Location</dt><dd>Southern Highlands</dd></div></dl>
 </div>
 <section class="section--tight"><div class="wrap prose">
   <div class="two-col"><div class="l"><h2>Overview</h2></div><div class="r"><p>${p.blurb}</p></div></div>
@@ -273,7 +273,7 @@ for (const p of projects) {
 ${p.images.length > 1 ? `<section class="wrap" aria-labelledby="gal-h" style="padding-bottom:var(--section)"><h2 id="gal-h" style="font-size:var(--fs-h3);margin-bottom:2rem">More views</h2>
   <ul class="gallery">${p.images.slice(1).map((im, i) => `<li class="reveal"><figure>${imgTag(im, '(min-width: 900px) 48vw, 100vw')}<figcaption>${p.name} · view ${i + 2} of ${p.images.length}</figcaption></figure></li>`).join('')}</ul></section>` : ''}
 <section class="section--tight rule-top"><div class="wrap prose">
-  <div class="two-col"><div class="l"><h2>Tell us what you have in mind</h2></div><div class="r"><p>Planning a new home, renovation or extension? Tell us what you’d like to create, where your property is located and what you want to achieve. You don’t need a complete brief—an initial idea is enough to start the conversation.</p></div></div>
+  <div class="two-col"><div class="l"><h2>Tell us what you have in mind</h2></div><div class="r"><p>Planning a new home, renovation or extension? Tell us what you’d like to create, where your property is located and what you want to achieve. You don’t need a complete brief. An initial idea is enough to start the conversation.</p></div></div>
   <div class="two-col" style="margin-top:3rem"><div class="l"><h2>What matters to you?</h2></div><div class="r"><p>More space, better natural light, easier everyday living or a stronger connection to the outdoors? Share your priorities, preferred style and any inspiration you’ve collected. An indicative budget and timeframe are helpful if you have them.</p></div></div>
   <div class="two-col" style="margin-top:3rem"><div class="l"><h2>How we can help</h2></div><div class="r"><p>From early concepts and floor plans to detailed drawings and approval documentation, we’ll help you understand the next steps and the services your project needs.</p><p><a class="tlink" href="${svc.path}">${svc.name} ${ARR}</a></p></div></div>
 </div></section>
@@ -299,7 +299,7 @@ const svcPages = {
     solve: ['Making the most of aspect, views and slope', 'Balancing what you want with what your budget allows', 'Understanding what approvals your site is likely to need', 'Turning a rough brief into clear plans a builder can price'],
     scope: ['Site analysis and design brief', 'Concept plans and options', 'Developed design, including materials and finishes', 'Drawings and documentation for the agreed approval pathway'],
     proj: P['modern-farmhouse'],
-    faqs: [['Do I need a block before we talk?', 'No. It can help to talk early, even while you are choosing a site.'], ['Will you help me find a builder?', 'Your proposal will set out what is and is not included. Builder selection is discussed at the brief stage.']],
+    faqs: [['Do I need a block before we talk?', 'No. It can help to talk early, even while you are choosing a site.'], ['Will you help me find a builder?', 'Yes. We can recommend trusted local, licensed builders and tradespeople known for their reliability and quality workmanship.']],
   },
   'renovations-extensions': {
     title: 'Home Extension & Renovation Design Bowral | Veness', h1: 'Renovation and extension design in the Southern Highlands',
@@ -345,7 +345,7 @@ for (const [slug, s] of Object.entries(svcPages)) {
   <div class="two-col"><div class="l"><h2>Who it helps</h2></div><div class="r"><p>${s.who}</p></div></div>
   <div class="two-col" style="margin-top:3.5rem"><div class="l"><h2>Problems I can help solve</h2></div><div class="r"><ul>${s.solve.map((x) => `<li>${x}</li>`).join('')}</ul></div></div>
   <div class="two-col" style="margin-top:3.5rem"><div class="l"><h2>What’s typically included</h2></div><div class="r"><ul>${s.scope.map((x) => `<li>${x}</li>`).join('')}</ul><p>Your proposal sets out exactly which services, fees and consultants apply to your project.</p></div></div>
-  <div class="two-col" style="margin-top:3.5rem"><div class="l"><h2>Related project</h2></div><div class="r">${s.proj ? `<div style="max-width:560px">${pcard(s.proj, '', false, false, '(min-width: 900px) 40vw, 90vw')}</div>` : '<div class="pending"><span class="tag">CONTENT NEEDED</span><p style="margin:0">Chris to supply a renovation or extension example.</p></div>'}</div></div>
+  ${s.proj ? `<div class="two-col" style="margin-top:3.5rem"><div class="l"><h2>Related project</h2></div><div class="r"><div style="max-width:560px">${pcard(s.proj, '', false, false, '(min-width: 900px) 40vw, 90vw')}</div></div></div>` : ''}
   <div class="two-col" style="margin-top:3.5rem"><div class="l"><h2>How we work together</h2></div><div class="r"><p>We start with a conversation, agree the brief and scope, then develop the design with you. You’re asked for decisions at clear points, and each one is explained. <a href="/our-process/" style="color:var(--text)">See the full process</a>.</p></div></div>
   <div class="two-col faq" style="margin-top:3.5rem"><div class="l"><h2>Common questions</h2></div><div class="r">${s.faqs.map(([q, a]) => `<details><summary>${q}</summary><p>${a}</p></details>`).join('')}<p class="small" style="margin-top:1rem">General guidance only. The right approval pathway is specific to each project.</p></div></div>
 </div></section>${ctaBand()}`,
@@ -411,10 +411,10 @@ ${enquirySection('')}
 pages['/privacy/'] = layout({
   path: '/privacy/', title: 'Privacy | Veness Design & Drafting', desc: 'How Veness Design & Drafting collects and uses information from project enquiries.',
   body: `${head([['/', 'Home'], ['/privacy/', 'Privacy']], 'Privacy.')}
-<section class="section--tight"><div class="wrap prose" style="max-width:48rem"><div class="pending" style="margin-bottom:2rem"><span class="tag">DRAFT: CONFIRM BEFORE LAUNCH</span><p style="margin:0">This wording must be checked against the enquiry handling, hosting and analytics actually used, and approved by Chris.</p></div>
+<section class="section--tight"><div class="wrap prose" style="max-width:48rem">
 <h2>What we collect</h2><p>When you send a project enquiry we collect the details you enter: your name, email, optional phone number, property suburb, project type, message and preferred contact method.</p>
 <h2>How we use it</h2><p>We use these details only to reply to your enquiry and discuss your project. We don’t add you to a mailing list or ask for marketing consent through the enquiry form.</p>
-<h2>Who sees it</h2><p>Your enquiry is delivered to the Veness business inbox. [Hosting, form service and retention period to be confirmed.]</p>
+<h2>Who sees it</h2><p>Your enquiry is sent by email to Chris at ${EMAIL}. It passes through our website host and an email delivery service to reach him. We don’t keep a separate database of enquiries.</p><h2>How long we keep it</h2><p>The email stays in Chris’s business inbox for as long as it’s needed to reply and to manage your project. You can ask for it to be deleted at any time.</p>
 <h2>Contact</h2><p>To ask about or request deletion of your details, email <a href="mailto:${EMAIL}" style="color:var(--text)">${EMAIL}</a>.</p></div></section>`,
 });
 
