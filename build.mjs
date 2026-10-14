@@ -375,7 +375,8 @@ pages['/meet-chris/'] = layout({
   desc: 'Meet Chris Veness, founder of Veness Design & Drafting: a personal, honest approach to new homes, renovations and extensions in the Southern Highlands.',
   ld: [{ '@type': 'Person', name: 'Chris Veness', jobTitle: 'Building designer', url: `${SITE}/meet-chris/`, worksFor: { '@id': `${SITE}/#business` } }],
   body: `${head([['/', 'Home'], ['/meet-chris/', 'Meet Chris']], 'A personal approach to your home.')}
-<section class="section--tight"><div class="wrap split solo">
+<section class="section--tight"><div class="wrap split">
+  <div class="col-a" style="align-self:start;position:sticky;top:calc(var(--header-h) + 1.5rem)"><figure class="portrait-img"><img src="/assets/chris-960.webp" srcset="/assets/chris-480.webp 480w, /assets/chris-960.webp 960w" sizes="(min-width: 900px) 30vw, 90vw" width="960" height="1200" alt="Chris Veness, smiling, in front of a brick wall, wearing a black jumper" fetchpriority="high"></figure></div>
   <div class="col-b prose"><p class="lede" style="color:var(--text)">${bio.lede}</p>
     ${bio.sections.map((sec) => `<h2>${sec.h}</h2>${sec.paras.map((t) => `<p>${t}</p>`).join('')}`).join('')}
     <p class="lede" style="color:var(--text);margin-top:2.5rem;border-top:1px solid var(--rule);padding-top:2rem">${bio.closing}</p>
